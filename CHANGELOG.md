@@ -4,6 +4,7 @@
 
 - 新增 `README.en.md`：完整英文教程，不是摘要；`README.md` 顶部可切换。
 - 新增 `AI-DEPLOY.en.md`：英文 AI 部署协议；`AI-DEPLOY.md` 顶部可切换。
+- 项目名改为中英双语：README 标题与首屏名称行同时出现“ComfyUI 低显存部署 / ComfyUI Low-VRAM Deployment”。
 - 英文版保留全部命令、路径、参数、验收标准和风险提示。
 
 ## 2026-11-06 · 预览图
