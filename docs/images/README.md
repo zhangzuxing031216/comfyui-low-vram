@@ -14,6 +14,8 @@
 | `02-folder.svg` | 目录结构与模型位置 |
 | `03-ui-map.svg` | ComfyUI 界面地图（示意图） |
 | `04-troubleshooting.svg` | 排错决策树 |
+| `05-ui-mockup.svg` | 装完后的工作流界面示意（含节点、队列、预览、实测速度） |
+| `06-vram-compare.svg` | 4GB / 6GB / 8GB 能力边界与 6GB 实测速度 |
 
 ## 如果你要补真实截图
 

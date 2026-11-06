@@ -1,5 +1,11 @@
 # 更新记录
 
+## 2026-11-06 · 预览图
+
+- 新增 `docs/images/05-ui-mockup.svg`：装完后的工作流界面示意。
+- 新增 `docs/images/06-vram-compare.svg`：4GB / 6GB / 8GB 能力边界与 6GB 实测速度。
+- `README.md` 增加“效果预览”。
+
 ## 2026-11-06 · v0.1
 
 - 初版：面向 4GB / 6GB / 8GB 显存的 ComfyUI 入门方案。
