@@ -1,0 +1,26 @@
+# 更新记录
+
+## 2026-11-06 · v0.1
+
+- 初版：面向 4GB / 6GB / 8GB 显存的 ComfyUI 入门方案。
+- 双文档：
+  - `README.md`：给人看，从检查硬件到第一张图。
+  - `AI-DEPLOY.md`：给 AI 看，含取证、分支、验收、故障树。
+- 脚本：
+  - `install-windows.ps1`：下载便携版、解压、生成低显存启动脚本。
+  - `download-models.py` + `models.json`：多源模型下载、断点续传、自动降级。
+  - `verify-install.ps1`：检查文件、Torch、CUDA、模型目录。
+  - `check-gpu.ps1`：判断显存档位。
+- 工作流：
+  - `sd15-basic.json`
+  - `sdxl-768-lowvram.json`
+- 文档：硬件、安装、模型、低显存、首图、排错、下载通道、FAQ、维护。
+- 图示：流程、目录、界面地图、排错树（SVG，非截图）。
+
+## 待办
+
+- [ ] 补真实截图（Windows 解压、ComfyUI 首屏、模型下拉框、出图结果）。
+- [ ] 补 macOS / Linux 安装说明。
+- [ ] 补 AMD / Intel 显卡路径。
+- [ ] 补 SD3.5 / Flux 低显存实测。
+- [ ] 模型链接定期巡检（每季度）。

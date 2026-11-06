@@ -1,0 +1,617 @@
+{
+  "schema": 1,
+  "updated": "2026-11",
+  "notes": [
+    "size_gb 是参考大小，用于判断是否下完；不同版本会有少量差异。",
+    "sources 按顺序尝试，前一个失败自动换下一个。",
+    "type=ms 走 ModelScope；type=hf 先走 hf-mirror 再走官方；type=cnb 走 CNB Git LFS；type=url 是直链。",
+    "CNB 是社区镜像，可能失效；失效时脚本会自动换源。"
+  ],
+  "profiles": {
+    "minimal": [
+      "majicmix",
+      "vae-sd15",
+      "lcm-sd15",
+      "4x-ultrasharp",
+      "cn-openpose",
+      "cn-canny"
+    ],
+    "standard": [
+      "majicmix",
+      "vae-sd15",
+      "lcm-sd15",
+      "4x-ultrasharp",
+      "cn-openpose",
+      "cn-canny",
+      "realvisxl",
+      "animagine",
+      "vae-sdxl",
+      "lcm-sdxl",
+      "cn-union-sdxl",
+      "4x-animesharp"
+    ],
+    "video": [
+      "majicmix",
+      "vae-sd15",
+      "lcm-sd15",
+      "4x-ultrasharp",
+      "cn-openpose",
+      "cn-canny",
+      "realvisxl",
+      "animagine",
+      "vae-sdxl",
+      "lcm-sdxl",
+      "cn-union-sdxl",
+      "4x-animesharp",
+      "svd",
+      "animatediff",
+      "wan-unet",
+      "wan-text",
+      "wan-vae",
+      "wan-lora"
+    ],
+    "post": [
+      "rmbg",
+      "codeformer",
+      "gfpgan",
+      "big-lama",
+      "fooocus-lama",
+      "ipadapter-plus",
+      "ipadapter-faceid",
+      "depth-anything",
+      "sam"
+    ]
+  },
+  "models": [
+    {
+      "id": "majicmix",
+      "name": "majicMIX Realistic v7（SD1.5 写实人像）",
+      "dest": "checkpoints/majicmixRealistic_v7.safetensors",
+      "size_gb": 1.99,
+      "sources": [
+        {
+          "type": "cnb",
+          "repo": "https://cnb.cool/itq5/comfyui_models",
+          "path": "checkpoints/majicmixRealistic_v7.safetensors"
+        },
+        {
+          "type": "hf",
+          "repo": "digiplay/majicMIX_realistic_v7",
+          "file": "majicmixRealistic_v7.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "meinamix",
+      "name": "MeinaMix V11（SD1.5 二次元）",
+      "dest": "checkpoints/MeinaMix_V11.safetensors",
+      "size_gb": 2.0,
+      "sources": [
+        {
+          "type": "hf",
+          "repo": "Meina/MeinaMix_V11",
+          "file": "MeinaMix_V11.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "dreamshaper",
+      "name": "DreamShaper 8（SD1.5 通用）",
+      "dest": "checkpoints/DreamShaper_8_pruned.safetensors",
+      "size_gb": 2.0,
+      "sources": [
+        {
+          "type": "hf",
+          "repo": "Lykon/dreamshaper-8",
+          "file": "DreamShaper_8_pruned.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "counterfeit",
+      "name": "Counterfeit V3.0（SD1.5 二次元）",
+      "dest": "checkpoints/Counterfeit-V3.0_fp16.safetensors",
+      "size_gb": 4.0,
+      "sources": [
+        {
+          "type": "hf",
+          "repo": "gsdf/Counterfeit-V3.0",
+          "file": "Counterfeit-V3.0_fp16.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "sd15-base",
+      "name": "Stable Diffusion 1.5 官方基础模型",
+      "dest": "checkpoints/v1-5-pruned-emaonly.safetensors",
+      "size_gb": 4.3,
+      "sources": [
+        {
+          "type": "hf",
+          "repo": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+          "file": "v1-5-pruned-emaonly.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "realvisxl",
+      "name": "RealVisXL V4.0（SDXL 写实人像）",
+      "dest": "checkpoints/RealVisXL_V4.0.safetensors",
+      "size_gb": 6.46,
+      "sources": [
+        {
+          "type": "hf",
+          "repo": "SG161222/RealVisXL_V4.0",
+          "file": "RealVisXL_V4.0.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "juggernaut",
+      "name": "Juggernaut XI（SDXL 写实风景/通用）",
+      "dest": "checkpoints/juggernautXL_juggXIByRundiffusion.safetensors",
+      "size_gb": 6.62,
+      "sources": [
+        {
+          "type": "hf",
+          "repo": "RunDiffusion/Juggernaut-XI-v11",
+          "file": "juggernautXL_juggXIByRundiffusion.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "animagine",
+      "name": "Animagine XL 4.0（SDXL 动漫）",
+      "dest": "checkpoints/animagine-xl-4.0-opt.safetensors",
+      "size_gb": 6.94,
+      "sources": [
+        {
+          "type": "hf",
+          "repo": "cagliostrolab/animagine-xl-4.0",
+          "file": "animagine-xl-4.0-opt.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "sdxl-base",
+      "name": "Stable Diffusion XL 1.0 官方基础模型（含 VAE）",
+      "dest": "checkpoints/sd_xl_base_1.0_0.9vae.safetensors",
+      "size_gb": 6.94,
+      "sources": [
+        {
+          "type": "cnb",
+          "repo": "https://cnb.cool/ai-models/zhanzhangtuijian/ComfyUI_models",
+          "path": "models/checkpoint/sd_xl_base_1.0_0.9vae.safetensors"
+        },
+        {
+          "type": "hf",
+          "repo": "stabilityai/stable-diffusion-xl-base-1.0",
+          "file": "sd_xl_base_1.0_0.9vae.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "vae-sd15",
+      "name": "SD1.5 VAE（vae-ft-mse-840000）",
+      "dest": "vae/vae-ft-mse-840000-ema-pruned.safetensors",
+      "size_gb": 0.31,
+      "sources": [
+        {
+          "type": "hf",
+          "repo": "stabilityai/sd-vae-ft-mse-original",
+          "file": "vae-ft-mse-840000-ema-pruned.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "vae-sdxl",
+      "name": "SDXL VAE",
+      "dest": "vae/sdxl_vae.safetensors",
+      "size_gb": 0.31,
+      "sources": [
+        {
+          "type": "ms",
+          "repo": "stabilityai/sdxl-vae",
+          "path": "sdxl_vae.safetensors"
+        },
+        {
+          "type": "hf",
+          "repo": "stabilityai/sdxl-vae",
+          "file": "sdxl_vae.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "lcm-sd15",
+      "name": "LCM LoRA SD1.5（4 步加速）",
+      "dest": "loras/LCM-1.5-Lora.safetensors",
+      "size_gb": 0.13,
+      "sources": [
+        {
+          "type": "hf",
+          "repo": "latent-consistency/lcm-lora-sdv1-5",
+          "file": "pytorch_lora_weights.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "lcm-sdxl",
+      "name": "LCM LoRA SDXL（4–8 步加速）",
+      "dest": "loras/LCM-XL-Lora.safetensors",
+      "size_gb": 0.37,
+      "sources": [
+        {
+          "type": "hf",
+          "repo": "latent-consistency/lcm-lora-sdxl",
+          "file": "pytorch_lora_weights.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "4x-ultrasharp",
+      "name": "4x-UltraSharp（写实放大）",
+      "dest": "upscale_models/4x-UltraSharp.pth",
+      "size_gb": 0.06,
+      "sources": [
+        {
+          "type": "cnb",
+          "repo": "https://cnb.cool/ai-models/zhanzhangtuijian/ComfyUI_models",
+          "path": "models/upscale_models/4x-UltraSharp.pth"
+        }
+      ]
+    },
+    {
+      "id": "4x-animesharp",
+      "name": "4x-AnimeSharp（动漫放大）",
+      "dest": "upscale_models/4x-AnimeSharp.pth",
+      "size_gb": 0.06,
+      "sources": [
+        {
+          "type": "cnb",
+          "repo": "https://cnb.cool/ai-models/zhanzhangtuijian/ComfyUI_models",
+          "path": "models/upscale_models/4x-AnimeSharp.pth"
+        }
+      ]
+    },
+    {
+      "id": "realesrgan-x4",
+      "name": "RealESRGAN x4plus（通用放大）",
+      "dest": "upscale_models/RealESRGAN_x4plus.pth",
+      "size_gb": 0.06,
+      "sources": [
+        {
+          "type": "cnb",
+          "repo": "https://cnb.cool/ai-models/zhanzhangtuijian/ComfyUI_models",
+          "path": "models/upscale_models/RealESRGAN_x4plus.pth"
+        }
+      ]
+    },
+    {
+      "id": "cn-openpose",
+      "name": "ControlNet SD1.5 OpenPose（fp16）",
+      "dest": "controlnet/control_v11p_sd15_openpose_fp16.safetensors",
+      "size_gb": 0.67,
+      "sources": [
+        {
+          "type": "ms",
+          "repo": "comfyanonymous/ControlNet-v1-1_fp16_safetensors",
+          "path": "control_v11p_sd15_openpose_fp16.safetensors"
+        },
+        {
+          "type": "hf",
+          "repo": "comfyanonymous/ControlNet-v1-1_fp16_safetensors",
+          "file": "control_v11p_sd15_openpose_fp16.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "cn-canny",
+      "name": "ControlNet SD1.5 Canny（fp16）",
+      "dest": "controlnet/control_v11p_sd15_canny_fp16.safetensors",
+      "size_gb": 0.67,
+      "sources": [
+        {
+          "type": "ms",
+          "repo": "comfyanonymous/ControlNet-v1-1_fp16_safetensors",
+          "path": "control_v11p_sd15_canny_fp16.safetensors"
+        },
+        {
+          "type": "hf",
+          "repo": "comfyanonymous/ControlNet-v1-1_fp16_safetensors",
+          "file": "control_v11p_sd15_canny_fp16.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "cn-lineart",
+      "name": "ControlNet SD1.5 Lineart（线稿）",
+      "dest": "controlnet/control_v11p_sd15_lineart_fp16.safetensors",
+      "size_gb": 0.67,
+      "sources": [
+        {
+          "type": "cnb",
+          "repo": "https://cnb.cool/ai-models/zhanzhangtuijian/ComfyUI_models",
+          "path": "models/controlnet/sd15/control_v11p_sd15_lineart.pth"
+        },
+        {
+          "type": "hf",
+          "repo": "comfyanonymous/ControlNet-v1-1_fp16_safetensors",
+          "file": "control_v11p_sd15_lineart_fp16.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "cn-union-sdxl",
+      "name": "ControlNet Union SDXL（万能控图）",
+      "dest": "controlnet/controlnet-union-sdxl-1.0.safetensors",
+      "size_gb": 2.34,
+      "sources": [
+        {
+          "type": "cnb",
+          "repo": "https://cnb.cool/ai-models/zhanzhangtuijian/ComfyUI_models",
+          "path": "models/controlnet/xl/controlnet-union-sdxl-1.0.safetensors"
+        },
+        {
+          "type": "hf",
+          "repo": "xinsir/controlnet-union-sdxl-1.0",
+          "file": "controlnet-union-sdxl-1.0.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "svd",
+      "name": "SVD XT 1.1（图生视频）",
+      "dest": "checkpoints/svd_xt_1_1.safetensors",
+      "size_gb": 4.45,
+      "sources": [
+        {
+          "type": "cnb",
+          "repo": "https://cnb.cool/itq5/comfyui_models",
+          "path": "checkpoints/svd_xt_1_1.safetensors"
+        },
+        {
+          "type": "hf",
+          "repo": "stabilityai/stable-video-diffusion-img2vid-xt-1-1",
+          "file": "svd_xt_1_1.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "animatediff",
+      "name": "AnimateDiff SD1.5 运动模块",
+      "dest": "animatediff_models/mm_sd_v15_v2.ckpt",
+      "size_gb": 1.69,
+      "sources": [
+        {
+          "type": "hf",
+          "repo": "guoyww/animatediff",
+          "file": "mm_sd_v15_v2.ckpt"
+        }
+      ]
+    },
+    {
+      "id": "wan-unet",
+      "name": "Wan2.2 TI2V 5B GGUF Q8（低显存视频）",
+      "dest": "unet/Wan2.2-TI2V-5B-Q8_0.gguf",
+      "size_gb": 5.03,
+      "sources": [
+        {
+          "type": "ms",
+          "repo": "QuantStack/Wan2.2-TI2V-5B-GGUF",
+          "path": "Wan2.2-TI2V-5B-Q8_0.gguf"
+        },
+        {
+          "type": "hf",
+          "repo": "QuantStack/Wan2.2-TI2V-5B-GGUF",
+          "file": "Wan2.2-TI2V-5B-Q8_0.gguf"
+        }
+      ]
+    },
+    {
+      "id": "wan-text",
+      "name": "Wan2.2 文本编码器 umt5 fp8",
+      "dest": "text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "size_gb": 6.27,
+      "sources": [
+        {
+          "type": "ms",
+          "repo": "Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
+          "path": "split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+        },
+        {
+          "type": "hf",
+          "repo": "Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
+          "file": "split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "wan-vae",
+      "name": "Wan2.2 VAE",
+      "dest": "vae/wan2.2_vae.safetensors",
+      "size_gb": 1.31,
+      "sources": [
+        {
+          "type": "ms",
+          "repo": "Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
+          "path": "split_files/vae/wan2.2_vae.safetensors"
+        },
+        {
+          "type": "hf",
+          "repo": "Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
+          "file": "split_files/vae/wan2.2_vae.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "wan-lora",
+      "name": "FastWan 5B 4 步加速 LoRA",
+      "dest": "loras/Wan2_2_5B_FastWanFullAttn_lora_rank_128_bf16.safetensors",
+      "size_gb": 0.62,
+      "sources": [
+        {
+          "type": "ms",
+          "repo": "Kijai/WanVideo_comfy",
+          "path": "FastWan/Wan2_2_5B_FastWanFullAttn_lora_rank_128_bf16.safetensors"
+        },
+        {
+          "type": "hf",
+          "repo": "Kijai/WanVideo_comfy",
+          "file": "FastWan/Wan2_2_5B_FastWanFullAttn_lora_rank_128_bf16.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "rmbg",
+      "name": "RMBG-1.4（高质量抠图）",
+      "dest": "rembg/RMBG-1.4.pth",
+      "size_gb": 0.16,
+      "sources": [
+        {
+          "type": "cnb",
+          "repo": "https://cnb.cool/ai-models/zhanzhangtuijian/ComfyUI_models",
+          "path": "models/rembg/RMBG-1.4.pth"
+        },
+        {
+          "type": "hf",
+          "repo": "briaai/RMBG-1.4",
+          "file": "model.pth"
+        }
+      ]
+    },
+    {
+      "id": "codeformer",
+      "name": "CodeFormer（人脸修复）",
+      "dest": "facerestore_models/codeformer.pth",
+      "size_gb": 0.35,
+      "sources": [
+        {
+          "type": "cnb",
+          "repo": "https://cnb.cool/ai-models/zhanzhangtuijian/ComfyUI_models",
+          "path": "models/facerestore_models/codeformer.pth"
+        },
+        {
+          "type": "hf",
+          "repo": "sczhou/CodeFormer",
+          "file": "codeformer.pth"
+        }
+      ]
+    },
+    {
+      "id": "gfpgan",
+      "name": "GFPGAN v1.4（人脸修复）",
+      "dest": "facerestore_models/GFPGANv1.4.pth",
+      "size_gb": 0.32,
+      "sources": [
+        {
+          "type": "cnb",
+          "repo": "https://cnb.cool/ai-models/zhanzhangtuijian/ComfyUI_models",
+          "path": "models/facerestore_models/GFPGANv1.4.pth"
+        },
+        {
+          "type": "hf",
+          "repo": "TencentARC/GFPGAN",
+          "file": "GFPGANv1.4.pth"
+        }
+      ]
+    },
+    {
+      "id": "big-lama",
+      "name": "big-lama（去物体/去水印）",
+      "dest": "inpaint/big-lama.pt",
+      "size_gb": 0.19,
+      "sources": [
+        {
+          "type": "cnb",
+          "repo": "https://cnb.cool/ai-models/zhanzhangtuijian/ComfyUI_models",
+          "path": "models/inpaint/big-lama.pt"
+        }
+      ]
+    },
+    {
+      "id": "fooocus-lama",
+      "name": "fooocus_lama（快速去物体）",
+      "dest": "inpaint/fooocus_lama.safetensors",
+      "size_gb": 0.1,
+      "sources": [
+        {
+          "type": "cnb",
+          "repo": "https://cnb.cool/ai-models/zhanzhangtuijian/ComfyUI_models",
+          "path": "models/inpaint/fooocus_inpaint/fooocus_lama.safetensors"
+        }
+      ]
+    },
+    {
+      "id": "ipadapter-plus",
+      "name": "IP-Adapter Plus SD1.5（参考图风格）",
+      "dest": "ipadapter/ip-adapter-plus_sd15.bin",
+      "size_gb": 0.1,
+      "sources": [
+        {
+          "type": "cnb",
+          "repo": "https://cnb.cool/ai-models/zhanzhangtuijian/ComfyUI_models",
+          "path": "models/ipadapter/ip-adapter-plus_sd15.bin"
+        },
+        {
+          "type": "hf",
+          "repo": "h94/IP-Adapter",
+          "file": "models/ip-adapter-plus_sd15.bin"
+        }
+      ]
+    },
+    {
+      "id": "ipadapter-faceid",
+      "name": "IP-Adapter FaceID PlusV2 SD1.5（人脸一致性）",
+      "dest": "ipadapter/ip-adapter-faceid-plusv2_sd15.bin",
+      "size_gb": 0.1,
+      "sources": [
+        {
+          "type": "cnb",
+          "repo": "https://cnb.cool/ai-models/zhanzhangtuijian/ComfyUI_models",
+          "path": "models/ipadapter/ip-adapter-faceid-plusv2_sd15.bin"
+        },
+        {
+          "type": "hf",
+          "repo": "h94/IP-Adapter",
+          "file": "models/ip-adapter-faceid-plusv2_sd15.bin"
+        }
+      ]
+    },
+    {
+      "id": "depth-anything",
+      "name": "Depth Anything V2 Large（深度图）",
+      "dest": "depthanything/depth_anything_v2_vitl.pth",
+      "size_gb": 0.62,
+      "sources": [
+        {
+          "type": "cnb",
+          "repo": "https://cnb.cool/ai-models/zhanzhangtuijian/ComfyUI_models",
+          "path": "models/depthanything/depth_anything_v2_vitl.safetensors"
+        },
+        {
+          "type": "hf",
+          "repo": "depth-anything/Depth-Anything-V2-Large",
+          "file": "depth_anything_v2_vitl.pth"
+        }
+      ]
+    },
+    {
+      "id": "sam",
+      "name": "SAM vit-base（点选分割）",
+      "dest": "sam/sam_vit_b_01ec64.pth",
+      "size_gb": 0.35,
+      "sources": [
+        {
+          "type": "cnb",
+          "repo": "https://cnb.cool/ai-models/zhanzhangtuijian/ComfyUI_models",
+          "path": "models/sam/sam_vit_b_01ec64.pth"
+        },
+        {
+          "type": "hf",
+          "repo": "facebook/sam-vit-base",
+          "file": "sam_vit_b_01ec64.pth"
+        }
+      ]
+    }
+  ]
+}

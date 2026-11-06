@@ -1,0 +1,35 @@
+# 模型与输出不入库
+
+# ComfyUI 运行时
+models/
+output/
+input/
+temp/
+user/default/comfyui.log
+user/comfyui.db
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+python_embeded/
+pip-cache/
+
+# 下载的半成品与安装包
+*.part
+*.download
+_download/
+_tools/
+
+# 系统
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# 本地配置/密钥（绝对不要提交）
+.env
+*.key
+*.pem
+secrets/

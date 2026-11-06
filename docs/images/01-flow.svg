@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <defs>
+    <style>
+      .title { font-family: "Microsoft YaHei","Noto Sans CJK SC",sans-serif; font-size: 30px; font-weight: 700; fill: #111827; }
+      .sub { font-family: "Microsoft YaHei","Noto Sans CJK SC",sans-serif; font-size: 16px; fill: #4b5563; }
+      .step { font-family: "Microsoft YaHei","Noto Sans CJK SC",sans-serif; font-size: 18px; font-weight: 700; fill: #ffffff; }
+      .desc { font-family: "Microsoft YaHei","Noto Sans CJK SC",sans-serif; font-size: 14px; fill: #374151; }
+      .num { font-family: Arial,sans-serif; font-size: 15px; font-weight: 700; fill: #ffffff; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#9ca3af"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="520" fill="#f8fafc"/>
+  <text x="60" y="62" class="title">ComfyUI 低显存部署 · 6 步闭环</text>
+  <text x="60" y="92" class="sub">先跑通最小可用，再逐步加分辨率、控图、放大、视频</text>
+
+  <g>
+    <rect x="60" y="140" width="150" height="86" rx="14" fill="#2563eb"/>
+    <circle cx="84" cy="164" r="14" fill="#1e40af"/>
+    <text x="84" y="169" text-anchor="middle" class="num">1</text>
+    <text x="135" y="170" text-anchor="middle" class="step">查硬件</text>
+    <text x="135" y="198" text-anchor="middle" class="desc">显存 / 内存 / 磁盘</text>
+  </g>
+  <line x1="215" y1="183" x2="255" y2="183" stroke="#9ca3af" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="260" y="140" width="150" height="86" rx="14" fill="#0891b2"/>
+    <circle cx="284" cy="164" r="14" fill="#0e7490"/>
+    <text x="284" y="169" text-anchor="middle" class="num">2</text>
+    <text x="335" y="170" text-anchor="middle" class="step">装程序</text>
+    <text x="335" y="198" text-anchor="middle" class="desc">便携版解压即用</text>
+  </g>
+  <line x1="415" y1="183" x2="455" y2="183" stroke="#9ca3af" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="460" y="140" width="150" height="86" rx="14" fill="#7c3aed"/>
+    <circle cx="484" cy="164" r="14" fill="#5b21b6"/>
+    <text x="484" y="169" text-anchor="middle" class="num">3</text>
+    <text x="535" y="170" text-anchor="middle" class="step">下模型</text>
+    <text x="535" y="198" text-anchor="middle" class="desc">Minimal / Standard</text>
+  </g>
+  <line x1="615" y1="183" x2="655" y2="183" stroke="#9ca3af" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="660" y="140" width="150" height="86" rx="14" fill="#db2777"/>
+    <circle cx="684" cy="164" r="14" fill="#9d174d"/>
+    <text x="684" y="169" text-anchor="middle" class="num">4</text>
+    <text x="735" y="170" text-anchor="middle" class="step">启动</text>
+    <text x="735" y="198" text-anchor="middle" class="desc">lowvram / novram</text>
+  </g>
+  <line x1="815" y1="183" x2="855" y2="183" stroke="#9ca3af" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="860" y="140" width="150" height="86" rx="14" fill="#ea580c"/>
+    <circle cx="884" cy="164" r="14" fill="#9a3412"/>
+    <text x="884" y="169" text-anchor="middle" class="num">5</text>
+    <text x="935" y="170" text-anchor="middle" class="step">出首图</text>
+    <text x="935" y="198" text-anchor="middle" class="desc">拖工作流 → Queue</text>
+  </g>
+  <line x1="1015" y1="183" x2="1055" y2="183" stroke="#9ca3af" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="1060" y="140" width="90" height="86" rx="14" fill="#16a34a"/>
+    <circle cx="1084" cy="164" r="14" fill="#15803d"/>
+    <text x="1084" y="169" text-anchor="middle" class="num">6</text>
+    <text x="1105" y="170" text-anchor="middle" class="step">验收</text>
+    <text x="1105" y="198" text-anchor="middle" class="desc">图 + 文件</text>
+  </g>
+
+  <g>
+    <rect x="60" y="290" width="520" height="160" rx="14" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="84" y="326" class="desc" font-weight="700" font-size="17">先跑最小闭环</text>
+    <text x="84" y="356" class="desc">• SD1.5 + 512×512 + 20 步</text>
+    <text x="84" y="382" class="desc">• batch 1，不装插件，不加 ControlNet</text>
+    <text x="84" y="408" class="desc">• 确认 output 有 PNG，控制台无 Traceback</text>
+    <text x="84" y="434" class="desc">• 再谈 768 / SDXL / 放大 / 视频</text>
+  </g>
+
+  <g>
+    <rect x="620" y="290" width="520" height="160" rx="14" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="644" y="326" class="desc" font-weight="700" font-size="17">三条硬规则</text>
+    <text x="644" y="356" class="desc">• 一次只改一个变量</text>
+    <text x="644" y="382" class="desc">• 先降分辨率，再考虑量化</text>
+    <text x="644" y="408" class="desc">• 启动失败先用安全模式，别急着重装</text>
+    <text x="644" y="434" class="desc">• 任何“完成”都要有命令输出为证</text>
+  </g>
+</svg>

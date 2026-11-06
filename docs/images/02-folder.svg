@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <defs>
+    <style>
+      .title { font-family: "Microsoft YaHei","Noto Sans CJK SC",sans-serif; font-size: 30px; font-weight: 700; fill: #111827; }
+      .sub { font-family: "Microsoft YaHei","Noto Sans CJK SC",sans-serif; font-size: 16px; fill: #4b5563; }
+      .mono { font-family: Consolas,"Cascadia Mono",monospace; font-size: 16px; fill: #1f2937; }
+      .note { font-family: "Microsoft YaHei","Noto Sans CJK SC",sans-serif; font-size: 14px; fill: #6b7280; }
+      .badge { font-family: "Microsoft YaHei","Noto Sans CJK SC",sans-serif; font-size: 13px; font-weight: 700; }
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#f8fafc"/>
+  <text x="60" y="62" class="title">ComfyUI 目录结构 · 模型放哪里</text>
+  <text x="60" y="92" class="sub">放错目录 = 下拉框里看不到模型。先记这三个位置。</text>
+
+  <rect x="60" y="130" width="700" height="540" rx="14" fill="#0f172a"/>
+  <text x="90" y="172" class="mono" fill="#93c5fd">D:\ComfyUI\</text>
+  <text x="110" y="204" class="mono" fill="#e5e7eb">├─ ComfyUI\</text>
+  <text x="130" y="236" class="mono" fill="#e5e7eb">│  ├─ main.py</text>
+  <text x="130" y="268" class="mono" fill="#fbbf24">│  ├─ models\</text>
+  <text x="150" y="300" class="mono" fill="#fca5a5">│  │  ├─ checkpoints\</text>
+  <text x="150" y="332" class="mono" fill="#fca5a5">│  │  ├─ vae\</text>
+  <text x="150" y="364" class="mono" fill="#fca5a5">│  │  ├─ loras\</text>
+  <text x="150" y="396" class="mono" fill="#fca5a5">│  │  ├─ controlnet\</text>
+  <text x="150" y="428" class="mono" fill="#fca5a5">│  │  ├─ upscale_models\</text>
+  <text x="150" y="460" class="mono" fill="#fca5a5">│  │  └─ ...</text>
+  <text x="130" y="492" class="mono" fill="#e5e7eb">│  ├─ custom_nodes\</text>
+  <text x="130" y="524" class="mono" fill="#e5e7eb">│  ├─ user\</text>
+  <text x="130" y="556" class="mono" fill="#e5e7eb">│  └─ output\</text>
+  <text x="110" y="588" class="mono" fill="#e5e7eb">├─ python_embeded\</text>
+  <text x="130" y="620" class="mono" fill="#e5e7eb">│  └─ python.exe</text>
+  <text x="110" y="652" class="mono" fill="#86efac">├─ start-lowvram.bat</text>
+
+  <g>
+    <rect x="800" y="150" width="340" height="120" rx="12" fill="#ffffff" stroke="#e5e7eb"/>
+    <rect x="800" y="150" width="8" height="120" rx="4" fill="#f59e0b"/>
+    <text x="826" y="184" class="badge" fill="#92400e">checkpoints</text>
+    <text x="826" y="212" class="note">主模型：SD1.5 / SDXL</text>
+    <text x="826" y="238" class="note">例：RealVisXL_V4.0.safetensors</text>
+    <text x="826" y="260" class="note">6GB 显卡最吃这一层</text>
+  </g>
+
+  <g>
+    <rect x="800" y="292" width="340" height="120" rx="12" fill="#ffffff" stroke="#e5e7eb"/>
+    <rect x="800" y="292" width="8" height="120" rx="4" fill="#ef4444"/>
+    <text x="826" y="326" class="badge" fill="#991b1b">vae</text>
+    <text x="826" y="354" class="note">颜色不对先换它</text>
+    <text x="826" y="380" class="note">SD1.5：vae-ft-mse</text>
+    <text x="826" y="402" class="note">SDXL：sdxl_vae</text>
+  </g>
+
+  <g>
+    <rect x="800" y="434" width="340" height="120" rx="12" fill="#ffffff" stroke="#e5e7eb"/>
+    <rect x="800" y="434" width="8" height="120" rx="4" fill="#8b5cf6"/>
+    <text x="826" y="468" class="badge" fill="#5b21b6">loras / controlnet</text>
+    <text x="826" y="496" class="note">LoRA：加速、画风、角色</text>
+    <text x="826" y="522" class="note">ControlNet：姿势、线稿、深度</text>
+    <text x="826" y="544" class="note">注意 SD1.5 / SDXL 版本匹配</text>
+  </g>
+
+  <g>
+    <rect x="800" y="576" width="340" height="94" rx="12" fill="#ecfdf5" stroke="#a7f3d0"/>
+    <rect x="800" y="576" width="8" height="94" rx="4" fill="#10b981"/>
+    <text x="826" y="610" class="badge" fill="#065f46">output</text>
+    <text x="826" y="638" class="note">出图在这里；定期清理</text>
+    <text x="826" y="660" class="note">不备份也不会丢模型</text>
+  </g>
+</svg>
