@@ -2,6 +2,7 @@
 
 > **Language / 语言**: 中文 | [English](README.en.md)
 > **名称 / Name**: ComfyUI 低显存部署 · ComfyUI Low-VRAM Deployment
+> **当前版本 / Current version**: [`v0.1.0`](CHANGELOG.md) · [版本规则](VERSIONING.md)
 
 > **4GB / 6GB / 8GB 也能跑。** 写给**第一次接触 ComfyUI**的人。
 > 目标不是“装一个软件”，而是让你在**显存不大**的电脑上，真的生成第一张图，并且知道下一步该调什么。
@@ -13,6 +14,7 @@
 > - 想让 AI 帮你装？把 `AI-DEPLOY.md` 整个丢给 AI。
 
 <p>
+  <img alt="Version v0.1.0" src="https://img.shields.io/badge/version-v0.1.0-2563eb?style=flat-square">
   <img alt="Windows 11" src="https://img.shields.io/badge/Windows-11-0078D6?logo=windows&logoColor=white&style=flat-square">
   <img alt="VRAM 4/6/8GB" src="https://img.shields.io/badge/VRAM-4%20%7C%206%20%7C%208%20GB-22c55e?style=flat-square">
   <img alt="ComfyUI v0.42.1" src="https://img.shields.io/badge/ComfyUI-v0.42.1-ff6b6b?style=flat-square">
@@ -45,6 +47,7 @@
 | 两个低显存工作流 | `workflows/` |
 | 硬件、模型、排错、维护专题 | `docs/` |
 | 示意图 + 本机真实截图 | `docs/images/` |
+| 版本与更新记录 | `VERSION` / `CHANGELOG.md` / `VERSIONING.md` |
 
 **新手先做这 3 步**
 

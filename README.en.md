@@ -2,6 +2,7 @@
 
 > **Language / 语言**: [中文](README.md) | English
 > **Name / 名称**: ComfyUI Low-VRAM Deployment · ComfyUI 低显存部署
+> **Current version**: [`v0.1.0`](CHANGELOG.md) · [Versioning rules](VERSIONING.md)
 
 > **Runs on 4GB / 6GB / 8GB.** Written for people who are **touching ComfyUI for the first time**.
 > The goal is not "install a piece of software", but to actually generate your first image on a machine with **modest VRAM**, and to know what to adjust next.
@@ -13,6 +14,7 @@
 > - Want an AI to install it for you? Hand the whole `AI-DEPLOY.en.md` to the AI.
 
 <p>
+  <img alt="Version v0.1.0" src="https://img.shields.io/badge/version-v0.1.0-2563eb?style=flat-square">
   <img alt="Windows 11" src="https://img.shields.io/badge/Windows-11-0078D6?logo=windows&logoColor=white&style=flat-square">
   <img alt="VRAM 4/6/8GB" src="https://img.shields.io/badge/VRAM-4%20%7C%206%20%7C%208%20GB-22c55e?style=flat-square">
   <img alt="ComfyUI v0.42.1" src="https://img.shields.io/badge/ComfyUI-v0.42.1-ff6b6b?style=flat-square">
@@ -45,6 +47,7 @@ This is not an "install package" that pastes a few commands at you and calls it 
 | Two low-VRAM workflows | `workflows/` |
 | Hardware, model, troubleshooting, and maintenance topics | `docs/` (Chinese) |
 | Diagrams + real screenshots from this machine | `docs/images/` |
+| Version and changelog | `VERSION` / `CHANGELOG.md` / `VERSIONING.md` |
 
 > English scope: this README and `AI-DEPLOY.en.md` are complete translations. The optional deep-dive files under `docs/` are currently in Chinese.
 
