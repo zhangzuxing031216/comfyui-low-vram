@@ -1,5 +1,7 @@
 # AI-DEPLOY.md · 给 AI 的 ComfyUI 低显存部署指令
 
+> **Language / 语言**: 中文 | [English](AI-DEPLOY.en.md)
+
 > 这份文档是给 **AI 助手**读的，不是给人读的。
 > 人只需要把整份文档复制给 AI，然后说“按这个部署”。
 >
