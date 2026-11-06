@@ -9,15 +9,63 @@
 > - 不会用 AI？只看这份 `README.md` 就够了。
 > - 想让 AI 帮你装？把 `AI-DEPLOY.md` 整个丢给 AI。
 
+<p>
+  <img alt="Windows 11" src="https://img.shields.io/badge/Windows-11-0078D6?logo=windows&logoColor=white&style=flat-square">
+  <img alt="VRAM 4/6/8GB" src="https://img.shields.io/badge/VRAM-4%20%7C%206%20%7C%208%20GB-22c55e?style=flat-square">
+  <img alt="ComfyUI v0.42.1" src="https://img.shields.io/badge/ComfyUI-v0.42.1-ff6b6b?style=flat-square">
+  <img alt="License MIT" src="https://img.shields.io/badge/License-MIT-blue?style=flat-square">
+  <img alt="中文文档" src="https://img.shields.io/badge/docs-%E4%B8%AD%E6%96%87-0ea5e9?style=flat-square">
+</p>
+
+## 项目简介
+
+这不是“把命令贴给你就完事”的安装包，而是一份**从检查显卡到生成第一张图**的低显存 ComfyUI 教程。每一步都写了为什么、失败长什么样、下一步怎么调。
+
+**适合谁**
+
+- 第一次接触 ComfyUI，看到节点和报错就头大的人。
+- 显卡只有 4GB / 6GB / 8GB，想让现有电脑先跑起来的人。
+- 想按清单下模型，不想在网盘、假站、失效链接里踩坑的人。
+
+**不适合谁**
+
+- 已经有 24GB 显卡、主要跑 Flux / 长视频的人；这份文档会主动限制你的分辨率。
+- 想要“完全不用理解参数”的整合包的人；能装，但出问题很难排查。
+
+**你会得到什么**
+
+| 产物 | 位置 |
+|---|---|
+| 人看的完整教程 | `README.md`（本文） |
+| AI 部署协议 | `AI-DEPLOY.md` |
+| 安装/检查/下载脚本 | `scripts/` |
+| 两个低显存工作流 | `workflows/` |
+| 硬件、模型、排错、维护专题 | `docs/` |
+| 示意图 + 本机真实截图 | `docs/images/` |
+
+**新手先做这 3 步**
+
+1. 跑 `scripts/check-gpu.ps1`，确认自己属于 4GB / 6GB / 8GB 哪一档。
+2. 按第 3 章装 ComfyUI，按第 4 章下模型；不要先装一堆插件。
+3. 按第 5–6 章启动并生成第一张 512×512 图，再回第 7 章调显存参数。
+
 ---
 
 ## 效果预览
 
-先看看装完之后是什么样、低显存大概能跑到什么程度。两张都是**示意图**，不是伪造截图；真实截图位置见 `docs/images/README.md`。
+先看示意图，再看本机真实运行截图。示意图用来说明布局，真实截图来自 RTX 3060 Laptop 6GB。
 
 ![ComfyUI 低显存工作流界面示意](docs/images/05-ui-mockup.svg)
 
 ![4GB / 6GB / 8GB 能力与速度对比](docs/images/06-vram-compare.svg)
+
+**本机真实界面**（ComfyUI + 6GB，`--lowvram`）
+
+![ComfyUI 真实运行界面](docs/images/08-real-ui.png)
+
+**本机真实出图**（RealVisXL，768×768，20 步，6GB）
+
+![ComfyUI 真实出图示例](docs/images/07-example-output.jpg)
 
 ---
 

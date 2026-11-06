@@ -4,7 +4,9 @@
 
 - 新增 `docs/images/05-ui-mockup.svg`：装完后的工作流界面示意。
 - 新增 `docs/images/06-vram-compare.svg`：4GB / 6GB / 8GB 能力边界与 6GB 实测速度。
-- `README.md` 增加“效果预览”。
+- 新增 `docs/images/07-example-output.jpg`：本机 RTX 3060 6GB 真实出图。
+- 新增 `docs/images/08-real-ui.png`：本机 ComfyUI 真实界面截图。
+- `README.md` 增加“效果预览”和首屏徽章/简介/新手 3 步。
 
 ## 2026-11-06 · v0.1
 
