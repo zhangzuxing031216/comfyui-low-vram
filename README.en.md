@@ -3,6 +3,7 @@
 > **Language / 语言**: [中文](README.md) | English
 > **Name / 名称**: ComfyUI Low-VRAM Deployment · ComfyUI 低显存部署
 > **Current version**: [`v0.1.0`](CHANGELOG.md) · [Versioning rules](VERSIONING.md)
+> **Worklog**: [WORKLOG.md](WORKLOG.md)
 
 > **Runs on 4GB / 6GB / 8GB.** Written for people who are **touching ComfyUI for the first time**.
 > The goal is not "install a piece of software", but to actually generate your first image on a machine with **modest VRAM**, and to know what to adjust next.
